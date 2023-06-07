@@ -16,6 +16,8 @@ app.use(express.json());
 app.use(cors());
 const Jwt = token
 
+// User -----------------------------------------------------------------------------------------
+
 const User = mongoose.model('login', new mongoose.Schema({
     username: String,
     password: String,
@@ -69,15 +71,7 @@ app.post('/test/login', async (req, res) => {
     }
 });
 
-const MyModel = mongoose.model('mymodels', new mongoose.Schema({
-    account: String,
-    num: Number,
-    monako: String,
-    fenix: String,
-    lider: String,
-    turan: String
-}))
-
+// ---------------------------------------------------------------------------------------
 
 // Telegram ---------------------------------------------------------------------------------------------
 
@@ -153,6 +147,16 @@ app.get('/test/telegramSlot', async (req, res) => {
 // ---------------------------------------------------------------------------------------------------
 
 // INSTAGRAM -------------------------------------------------------------------------------------------
+
+const MyModel = mongoose.model('mymodels', new mongoose.Schema({
+    account: String,
+    num: Number,
+    monako: String,
+    fenix: String,
+    lider: String,
+    turan: String
+}))
+
 
 app.post('/test/mymodels', async (req, res) => {
     try {
